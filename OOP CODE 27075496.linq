@@ -1,5 +1,3 @@
-<Query Kind="Program" />
-
 namespace CMP1903M_A01_2223
 {
     class Testing
@@ -87,15 +85,17 @@ namespace CMP1903M_A01_2223
                 }
             }
         }
-		//public void PrintPackOrder()
-		//{
-		    //foreach (Card card in cards)
-		    //{
-		        //Console.WriteLine(card);
-		    //}
-		//}
+		public void PrintPackOrder() //extra method to print the current order of the deck
+		{
+		    foreach (Card card in cards)
+		    {
+		        Console.WriteLine(card);
+		    }
+		}
 
         // the method for shuffling the cards in the pack using Fisher-Yates shuffle algorithm
+		// it splits the original list into "half1" and "half2" then randomly chooses between both lists
+		// and adds it back into the original list
         public static void fisherYatesShuffle()
         {
             Random rand = new Random();
@@ -111,6 +111,7 @@ namespace CMP1903M_A01_2223
         }
 
         // the method for shuffling the cards in the pack using riffle shuffle algorithm
+		// splits the list into 2 then determines when half1 or half2 will be added with the "nextdouble" var
         public static void riffleShuffle()
         {
             Random rand = new Random();
